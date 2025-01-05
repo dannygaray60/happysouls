@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://n7daxecp7yj4"]
+
+[ext_resource type="Script" path="res://src/autoload/audio.gd" id="1_bvhyd"]
+[ext_resource type="AudioStream" uid="uid://c7ncrqw8nxoxr" path="res://assets/audio/sfx/accept_btn.wav" id="1_eqbf7"]
+[ext_resource type="AudioStream" uid="uid://v0ni4kl0iibp" path="res://assets/audio/bgm/town_music_low.ogg" id="3_t84gv"]
+[ext_resource type="AudioStream" uid="uid://cm0g6tv03j1qg" path="res://assets/audio/bgm/town_music_high.ogg" id="4_ua11d"]
+[ext_resource type="AudioStream" uid="uid://bajfylu3sh2pu" path="res://assets/audio/bgm/good_old_days.ogg" id="5_s5e38"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_rc1qs"]
+clip_count = 2
+clip_0/name = &"low"
+clip_0/stream = ExtResource("3_t84gv")
+clip_0/auto_advance = 0
+clip_1/name = &"high"
+clip_1/stream = ExtResource("4_ua11d")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 3,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="Audio" type="Node"]
+script = ExtResource("1_bvhyd")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="accept" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("1_eqbf7")
+volume_db = 8.0
+
+[node name="BGM" type="Node" parent="."]
+
+[node name="town" type="AudioStreamPlayer" parent="BGM"]
+stream = SubResource("AudioStreamInteractive_rc1qs")
+
+[node name="good_old_days" type="AudioStreamPlayer" parent="BGM"]
+stream = ExtResource("5_s5e38")
+volume_db = -5.0

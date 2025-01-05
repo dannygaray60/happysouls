@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc754nxrwd0rv"]
+
+[ext_resource type="Theme" uid="uid://bebwrpfh53ai5" path="res://assets/tres/ui_theme.tres" id="1_40kqs"]
+[ext_resource type="Texture2D" uid="uid://bb3fumj502nov" path="res://assets/images/sophia.png" id="1_s8eka"]
+[ext_resource type="FontFile" uid="uid://brlkmvjtgdk3s" path="res://assets/fonts/chewy/Chewy-Regular.ttf" id="2_d2b4r"]
+[ext_resource type="Script" path="res://src/ui/screens/main_menu.gd" id="2_ru323"]
+
+[sub_resource type="Gradient" id="Gradient_8kbke"]
+colors = PackedColorArray(0.32549, 0.643137, 0.878431, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yxwy4"]
+gradient = SubResource("Gradient_8kbke")
+fill_from = Vector2(0, -0.475)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qye8g"]
+atlas = ExtResource("1_s8eka")
+region = Rect2(0, 0, 1323, 1233.64)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_40kqs")
+script = ExtResource("2_ru323")
+
+[node name="GradientBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_yxwy4")
+
+[node name="TextureSophia" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1158.83
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qye8g")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LblTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -870.0
+offset_top = -423.0
+offset_right = 59.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.305882, 0.85098, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 70
+theme_override_fonts/font = ExtResource("2_d2b4r")
+theme_override_font_sizes/font_size = 200
+text = "Happy Souls"
+
+[node name="LblVersion" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -112.0
+offset_right = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.337255, 0.337255, 0.337255, 1)
+text = "version"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = 38.0
+offset_right = -103.0
+offset_bottom = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="BtnStart" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "START"
+
+[node name="BtnOptions" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "OPTIONS"
+
+[node name="BtnAbout" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "ABOUT"
+
+[node name="BtnExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/BtnStart" to="." method="_on_btn_pressed" binds= ["start"]]
+[connection signal="pressed" from="VBoxContainer/BtnOptions" to="." method="_on_btn_pressed" binds= ["options"]]
+[connection signal="pressed" from="VBoxContainer/BtnAbout" to="." method="_on_btn_pressed" binds= ["about"]]
+[connection signal="pressed" from="VBoxContainer/BtnExit" to="." method="_on_btn_pressed" binds= ["exit"]]
