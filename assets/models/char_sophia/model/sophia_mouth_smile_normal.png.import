@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjvo8w2ptm7fc"
-path.s3tc="res://.godot/imported/eyes_normal_map.png-c79d0f9cd87038d11b38f590269bee2d.s3tc.ctex"
+uid="uid://c36m8cv33f0yi"
+path="res://.godot/imported/sophia_mouth_smile_normal.png-5f980481117f92416728b94d0ffa9ef9.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/characters/sophia/model/textures/eyes_normal_map.png"
-dest_files=["res://.godot/imported/eyes_normal_map.png-c79d0f9cd87038d11b38f590269bee2d.s3tc.ctex"]
+source_file="res://assets/models/char_sophia/model/sophia_mouth_smile_normal.png"
+dest_files=["res://.godot/imported/sophia_mouth_smile_normal.png-5f980481117f92416728b94d0ffa9ef9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -25,7 +25,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://sophia/model/eyes_normal_map.png"
+roughness/src_normal="res://sophia/model/sophia_mouth_smile_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

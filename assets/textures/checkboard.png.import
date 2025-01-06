@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctfbobgg7ts8d"
-path.s3tc="res://.godot/imported/eyes_diffuse_map.png-8042b044a71ebb5e9088b7fd34cec5bc.s3tc.ctex"
+uid="uid://cnarhee6y40js"
+path.s3tc="res://.godot/imported/checkboard.png-351a21a5849e6fb81d4fd3d83e1c55bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/characters/sophia/model/textures/eyes_diffuse_map.png"
-dest_files=["res://.godot/imported/eyes_diffuse_map.png-8042b044a71ebb5e9088b7fd34cec5bc.s3tc.ctex"]
+source_file="res://assets/textures/checkboard.png"
+dest_files=["res://.godot/imported/checkboard.png-351a21a5849e6fb81d4fd3d83e1c55bf.s3tc.ctex"]
 
 [params]
 

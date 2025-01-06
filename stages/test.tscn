@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnefa8eg5aoga"]
+
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://assets/models/char_sophia/sophia_skin.tscn" id="1_iecu2"]
+[ext_resource type="Texture2D" uid="uid://cnarhee6y40js" path="res://assets/textures/checkboard.png" id="1_la040"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dueol"]
+albedo_color = Color(0.430276, 0.223083, 0.839844, 1)
+albedo_texture = ExtResource("1_la040")
+roughness = 0.85
+uv1_triplanar = true
+uv1_triplanar_sharpness = 10.5561
+
+[node name="TestArea" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0831, 0, -30.6843)
+material_override = SubResource("StandardMaterial3D_dueol")
+size = Vector3(74.123, 1, 123.182)
+
+[node name="SophiaSkin" parent="." instance=ExtResource("1_iecu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.470194, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.949579, 0.313528, 0, -0.313528, 0.949579, 0, 3.7675, 5.68054)
+current = true

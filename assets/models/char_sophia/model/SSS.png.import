@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqj7x6pcb73iy"
-path="res://.godot/imported/sophia_eye_open_diffuse.png-cb40daf8f29b7b0ebf3a9275e6221d14.ctex"
+uid="uid://dxqmgxq6o21yr"
+path="res://.godot/imported/SSS.png-3be76b983047d11d18d4e01602277c28.ctex"
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/characters/sophia/model/sophia_eye_open_diffuse.png"
-dest_files=["res://.godot/imported/sophia_eye_open_diffuse.png-cb40daf8f29b7b0ebf3a9275e6221d14.ctex"]
+source_file="res://assets/models/char_sophia/model/SSS.png"
+dest_files=["res://.godot/imported/SSS.png-3be76b983047d11d18d4e01602277c28.ctex"]
 
 [params]
 

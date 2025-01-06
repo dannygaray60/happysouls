@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqmgxq6o21yr"
-path="res://.godot/imported/SSS.png-cd7b6594e41c09901f1c4c56f424ee1e.ctex"
+uid="uid://6jb7dt4d54ck"
+path="res://.godot/imported/sophia_diffuse.png-5afbd41a5774c4072c9c911719b6c812.ctex"
 metadata={
 "vram_texture": false
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/models/characters/sophia/model/SSS.png"
-dest_files=["res://.godot/imported/SSS.png-cd7b6594e41c09901f1c4c56f424ee1e.ctex"]
+source_file="res://assets/models/char_sophia/model/sophia_diffuse.png"
+dest_files=["res://.godot/imported/sophia_diffuse.png-5afbd41a5774c4072c9c911719b6c812.ctex"]
 
 [params]
 
