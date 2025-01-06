@@ -1,25 +1,98 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnefa8eg5aoga"]
+[gd_scene load_steps=17 format=3 uid="uid://bnefa8eg5aoga"]
 
-[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://assets/models/char_sophia/sophia_skin.tscn" id="1_iecu2"]
 [ext_resource type="Texture2D" uid="uid://cnarhee6y40js" path="res://assets/textures/checkboard.png" id="1_la040"]
+[ext_resource type="Shader" path="res://src/shaders/sky_with_stars.gdshader" id="3_2kgpj"]
+[ext_resource type="Texture2D" uid="uid://dg0xcrhvutbi8" path="res://assets/textures/moon.png" id="4_gh2vi"]
+[ext_resource type="PackedScene" uid="uid://b3jyr6mjuvuaw" path="res://src/game_objects/characters/sophia.tscn" id="4_kenn0"]
+[ext_resource type="PackedScene" uid="uid://cip1awte2184j" path="res://src/game_objects/props/cactus/cactus_small_2.tscn" id="5_mkdjg"]
+[ext_resource type="PackedScene" uid="uid://c1d37gy1pj85v" path="res://src/game_objects/props/cactus/cactus_tall_5.tscn" id="6_rwvae"]
+[ext_resource type="PackedScene" uid="uid://e64a4omgpcs" path="res://assets/models/kenney_starter_pack/coin.glb" id="7_a2pl6"]
+
+[sub_resource type="Curve" id="Curve_48crp"]
+_data = [Vector2(0.333333, 0), 0.0, 0.0, 0, 0, Vector2(0.673913, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6cbyd"]
+curve = SubResource("Curve_48crp")
+
+[sub_resource type="Gradient" id="Gradient_txw30"]
+offsets = PackedFloat32Array(0.809091, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vdha8"]
+frequency = 0.3589
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wqa6h"]
+width = 1024
+height = 1024
+generate_mipmaps = false
+seamless = true
+color_ramp = SubResource("Gradient_txw30")
+noise = SubResource("FastNoiseLite_vdha8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x1n0"]
+shader = ExtResource("3_2kgpj")
+shader_parameter/top_color = Color(0.84375, 0.945068, 1, 1)
+shader_parameter/bottom_color = Color(0.14183, 0.519522, 0.558594, 1)
+shader_parameter/moon_direction = Vector3(-1, 0.68, 1)
+shader_parameter/moon_size = 0.045
+shader_parameter/gradient_curve = SubResource("CurveTexture_6cbyd")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_wqa6h")
+shader_parameter/moon_texture = ExtResource("4_gh2vi")
+
+[sub_resource type="Sky" id="Sky_415uf"]
+sky_material = SubResource("ShaderMaterial_0x1n0")
+
+[sub_resource type="Environment" id="Environment_53jcs"]
+background_mode = 2
+sky = SubResource("Sky_415uf")
+ambient_light_source = 3
+ambient_light_color = Color(0.639216, 0.741176, 0.886275, 1)
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+tonemap_exposure = 1.05
+tonemap_white = 0.95
+ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 1.4
+glow_levels/1 = 10.61
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dueol"]
-albedo_color = Color(0.430276, 0.223083, 0.839844, 1)
+albedo_color = Color(0.654999, 0.480469, 1, 1)
 albedo_texture = ExtResource("1_la040")
 roughness = 0.85
 uv1_triplanar = true
 uv1_triplanar_sharpness = 10.5561
 
 [node name="TestArea" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999377, -0.0352832, 0, 0.0352832, 0.999377, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_53jcs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.596332, -0.158133, -0.787008, 0.693742, -0.391734, 0.604373, -0.403869, -0.906388, -0.1239, -94.7216, 67.4436, -0.799736)
+light_energy = 0.53
+shadow_enabled = true
+directional_shadow_max_distance = 40.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0831, 0, -30.6843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.083, -0.482, -30.684)
 material_override = SubResource("StandardMaterial3D_dueol")
+use_collision = true
 size = Vector3(74.123, 1, 123.182)
 
-[node name="SophiaSkin" parent="." instance=ExtResource("1_iecu2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.470194, 1)
+[node name="Sophia" parent="." instance=ExtResource("4_kenn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231138, 0.224654, 0.124122)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.949579, 0.313528, 0, -0.313528, 0.949579, 0, 3.7675, 5.68054)
-current = true
+[node name="Cactus" type="Node3D" parent="."]
+
+[node name="Cactus_Tall_5" parent="Cactus" instance=ExtResource("6_rwvae")]
+transform = Transform3D(1, 0, 0, 0, 0.999377, 0.0352832, 0, -0.0352832, 0.999377, 2.08672, 0.018, 1.11514)
+
+[node name="Cactus_Small_2" parent="Cactus" instance=ExtResource("5_mkdjg")]
+transform = Transform3D(2.59, 0, 0, 0, 2.58839, 0.0913835, 0, -0.0913835, 2.58839, -1.55065, 0.0179999, 0.143367)
+
+[node name="coin" parent="." instance=ExtResource("7_a2pl6")]
+transform = Transform3D(1, 0, 0, 0, 0.999378, 0.0352832, 0, -0.0352832, 0.999378, 1.04347, 0.634723, 2.48669)

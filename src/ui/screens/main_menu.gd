@@ -9,7 +9,7 @@ func _on_btn_pressed(opt:String) -> void:
 	Audio.play_sfx("accept")
 	match opt:
 		"start":
-			pass
+			get_tree().change_scene_to_file("res://stages/test.tscn")
 		"options":
 			pass
 		"about":
