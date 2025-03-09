@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bij84ol81kcts"]
 
-[ext_resource type="Script" path="res://src/game_objects/props/interactable/kill_plane/kill_plane_3d.gd" id="1_a6gaa"]
+[ext_resource type="Script" uid="uid://dulvd5wanvg4x" path="res://src/game_objects/props/interactable/kill_plane/kill_plane_3d.gd" id="1_a6gaa"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bfwmc"]
 

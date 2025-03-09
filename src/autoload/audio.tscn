@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://n7daxecp7yj4"]
 
-[ext_resource type="Script" path="res://src/autoload/audio.gd" id="1_bvhyd"]
+[ext_resource type="Script" uid="uid://c8qqu0mb5xl0a" path="res://src/autoload/audio.gd" id="1_bvhyd"]
 [ext_resource type="AudioStream" uid="uid://c7ncrqw8nxoxr" path="res://assets/audio/sfx/accept_btn.wav" id="1_eqbf7"]
 [ext_resource type="AudioStream" uid="uid://v0ni4kl0iibp" path="res://assets/audio/bgm/town_music_low.ogg" id="3_t84gv"]
 [ext_resource type="AudioStream" uid="uid://cm0g6tv03j1qg" path="res://assets/audio/bgm/town_music_high.ogg" id="4_ua11d"]
@@ -16,7 +16,7 @@ clip_1/stream = ExtResource("4_ua11d")
 clip_1/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
-"fade_beats": 3,
+"fade_beats": 3.0,
 "fade_mode": 3,
 "from_time": 0,
 "to_time": 0

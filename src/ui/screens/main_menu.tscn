@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bebwrpfh53ai5" path="res://assets/tres/ui_theme.tres" id="1_40kqs"]
 [ext_resource type="Texture2D" uid="uid://bb3fumj502nov" path="res://assets/images/sophia.png" id="1_s8eka"]
 [ext_resource type="FontFile" uid="uid://brlkmvjtgdk3s" path="res://assets/fonts/chewy/Chewy-Regular.ttf" id="2_d2b4r"]
-[ext_resource type="Script" path="res://src/ui/screens/main_menu.gd" id="2_ru323"]
+[ext_resource type="Script" uid="uid://c1kn3xiuf6slr" path="res://src/ui/screens/main_menu.gd" id="2_ru323"]
 
 [sub_resource type="Gradient" id="Gradient_8kbke"]
 colors = PackedColorArray(0.32549, 0.643137, 0.878431, 1, 1, 1, 1, 1)

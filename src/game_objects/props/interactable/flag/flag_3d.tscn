@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6uew1wfpkt16"]
 
 [ext_resource type="PackedScene" uid="uid://drkqkt2fp2jca" path="res://src/game_objects/props/interactable/flag/flag.glb" id="1_gjsm0"]
-[ext_resource type="Script" path="res://src/game_objects/props/interactable/flag/flag_3d.gd" id="2_1g2ow"]
-[ext_resource type="Shader" path="res://src/game_objects/props/interactable/flag/goal_flag.gdshader" id="2_pdycc"]
+[ext_resource type="Script" uid="uid://c60ealieieegx" path="res://src/game_objects/props/interactable/flag/flag_3d.gd" id="2_1g2ow"]
+[ext_resource type="Shader" uid="uid://dbys35veufwmo" path="res://src/game_objects/props/interactable/flag/goal_flag.gdshader" id="2_pdycc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfpnh"]
 albedo_color = Color(1, 0.623529, 0.101961, 1)

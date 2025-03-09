@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bnefa8eg5aoga"]
 
 [ext_resource type="Texture2D" uid="uid://cnarhee6y40js" path="res://assets/textures/checkboard.png" id="1_la040"]
-[ext_resource type="Shader" path="res://src/shaders/sky_with_stars.gdshader" id="3_2kgpj"]
+[ext_resource type="Shader" uid="uid://b74glh8v5n5mr" path="res://src/shaders/sky_with_stars.gdshader" id="3_2kgpj"]
 [ext_resource type="Texture2D" uid="uid://dg0xcrhvutbi8" path="res://assets/textures/moon.png" id="4_gh2vi"]
 [ext_resource type="PackedScene" uid="uid://b3jyr6mjuvuaw" path="res://src/game_objects/characters/sophia.tscn" id="4_kenn0"]
 [ext_resource type="PackedScene" uid="uid://cip1awte2184j" path="res://src/game_objects/props/cactus/cactus_small_2.tscn" id="5_mkdjg"]
@@ -35,11 +35,11 @@ noise = SubResource("FastNoiseLite_vdha8")
 shader = ExtResource("3_2kgpj")
 shader_parameter/top_color = Color(0.84375, 0.945068, 1, 1)
 shader_parameter/bottom_color = Color(0.14183, 0.519522, 0.558594, 1)
-shader_parameter/moon_direction = Vector3(-1, 0.68, 1)
-shader_parameter/moon_size = 0.045
 shader_parameter/gradient_curve = SubResource("CurveTexture_6cbyd")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_wqa6h")
 shader_parameter/moon_texture = ExtResource("4_gh2vi")
+shader_parameter/moon_direction = Vector3(-1, 0.68, 1)
+shader_parameter/moon_size = 0.045
 
 [sub_resource type="Sky" id="Sky_415uf"]
 sky_material = SubResource("ShaderMaterial_0x1n0")
